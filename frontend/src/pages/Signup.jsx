@@ -4,6 +4,7 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { Navigate } from "react-router-dom";
 import { proxy } from "../../utils/proxy";
 import "../styles/Signup.css";
+
 const SignUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,16 +14,12 @@ const SignUp = () => {
   const handleSignUp = async (e) => {
     console.log("signup button clicked");
     e.preventDefault();
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-      setText("Invalid user ID");
-      return;
-    }
+
     try {
       const response = await fetch(`${proxy}/api/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({ username, password }),
       });
@@ -35,11 +32,11 @@ const SignUp = () => {
         localStorage.setItem("username", data.username);
         setSignupSuccess(true);
       } else {
-        // alert(data.message || "Signup failed");
         setText(data.message || "Signup failed");
       }
     } catch (error) {
       console.error("Error:", error);
+      setText("An error occurred during signup. Please try again.");
     }
   };
 
@@ -100,3 +97,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+

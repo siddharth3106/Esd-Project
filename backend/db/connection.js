@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const DB_URI =
-  "mongodb+srv://b44068845:oQCopdn8H5xPQsBx@cluster0.ba6x5e3.mongodb.net/finance_app_db?retryWrites=true&w=majority";
+  "mongodb+srv://mongodb:Rajat4603@cluster0.hmm2ifx.mongodb.net/finance_app_db?retryWrites=true&w=majority";
 
 async function connectDatabase() {
   try {

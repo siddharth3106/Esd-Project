@@ -10,7 +10,7 @@ app.use(express.json());
 
 mongoose
   .connect(
-    "mongodb+srv://b44068845:oQCopdn8H5xPQsBx@cluster0.ba6x5e3.mongodb.net/finance_app_db?retryWrites=true&w=majority"
+    "mongodb+srv://mongodb:Rajat4603@cluster0.hmm2ifx.mongodb.net/finance_app_db?retryWrites=true&w=majority"
   )
   .then(() => console.log("Connected to MongoDB2"))
   .catch((err) => console.log(err));
