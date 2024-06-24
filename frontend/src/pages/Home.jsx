@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { proxy } from "../../utils/proxy.js";
-
 import {
   LineChart,
   Line,
   XAxis,
+  
   YAxis,
   CartesianGrid,
   Tooltip,
